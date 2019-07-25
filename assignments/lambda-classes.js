@@ -53,6 +53,7 @@ class Instructor extends Person {
 }
 
 
+
 class Student extends Person {
     constructor(attrs) {
         super(attrs),
@@ -75,7 +76,14 @@ class Student extends Person {
     sprintChallenge(subject) {
         console.log(`${this.name} has begun sprint challenge on ${subject}`);
     }
+
+    graduate() {
+       if (this.grade >= 70) {
+        console.log(`Congratulation you graduated!`)
+       }
+    }
 }
+
 
 class ProjectManager extends Instructor {
     constructor(attrs) {
@@ -123,6 +131,7 @@ fred.demo("CSS");
 fred.grade(dave, "CSS");
 fred.changeGrade(dave);
 fred.grade(dave, "CSS");
+dave.graduate(dave);
 
 //Student 
 dave.listsSubjects();
