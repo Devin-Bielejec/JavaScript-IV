@@ -101,14 +101,14 @@ const fred = new Instructor({
 
 #### Project Manager
 
-* Now that we have instructors and students, we'd be nowhere without our PM's
-* ProjectManagers are extensions of Instructors
-* ProjectManagers have the following unique props:
-  * `gradClassName`: i.e. CS1
-  * `favInstructor`: i.e. Sean
-* ProjectManagers have the following Methods:
-  * `standUp` a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​
-  * `debugsCode` a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}`
+[X] Now that we have instructors and students, we'd be nowhere without our PM's
+[X] ProjectManagers are extensions of Instructors
+[X] ProjectManagers have the following unique props:
+  [X] `gradClassName`: i.e. CS1
+  [X] `favInstructor`: i.e. Sean
+[X] ProjectManagers have the following Methods:
+  [X] `standUp` a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​
+  [X] `debugsCode` a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}`
 
 #### Stretch Problem
 
