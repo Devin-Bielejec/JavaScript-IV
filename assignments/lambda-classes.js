@@ -34,7 +34,7 @@ class Student extends Person {
     constructor(attrs) {
         super(attrs),
         this.previousBackground = attrs.previousBackground,
-        this.className = attrs.calssName,
+        this.className = attrs.className,
         this.favSubjects = attrs.favSubjects
     }
 
