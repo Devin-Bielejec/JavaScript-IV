@@ -112,25 +112,25 @@ class Villian extends Humanoid {
     }
 
     attack(enemy, weapon) {
-    let damage = 0;
-    console.log("WEAPON is", weapon)
-    if (weapon == "Rocket") {
-        damage = 20;
-    } else if (weapon == "Laser") {
-        damage = 15;
-    } else if (weapon == "Sonic Beam") {
-        damage = 30;
-    } else {
-        damage = 0; //someone messed up, technically don't need this line
-    }
-    enemy.healthPoints -= damage;
-    
-    if (enemy.healthPoints <= 0) {
-        return `${enemy.name} has fallen due to the ${weapon}.`;
-    } else{
-        return `${this.name} [${this.healthPoints}] uses his ${weapon} to deal ${damage} to ${enemy.name} [${enemy.healthPoints}]`;
-    }
-    }
+        let damage = 0;
+        console.log("Weapon is", weapon)
+        if (weapon == "Rocket") {
+            damage = 20;
+        } else if (weapon == "Laser") {
+            damage = 15;
+        } else if (weapon == "Sonic Beam") {
+            damage = 30;
+        } else {
+            damage = 0; //someone messed up, technically don't need this line
+        }
+        enemy.healthPoints -= damage;
+        
+        if (enemy.healthPoints <= 0) {
+            return `${enemy.name} has fallen due to the ${weapon}.`;
+        } else{
+            return `${this.name} [${this.healthPoints}] uses his ${weapon} to deal ${damage} to ${enemy.name} [${enemy.healthPoints}]`;
+        }
+        }
 }
   
 function randomItemFromArray(array){
@@ -143,30 +143,23 @@ class Hero extends Humanoid {
     }
 
     attack(enemy, weapon) {
+        //writing if statment a different way
+        let damage = 0;
+            
+        (weapon == "Fist") ? damage = 15 : 
+        (weapon == "Foot") ? damage = 20 :
+        (weapon == "Double Fists") ? damage = 30 : damage = 0;
 
+        damage *= (this.dimensions.length+this.dimensions.width+this.dimensions.height);
+        enemy.healthPoints -= damage;
+
+        return enemy.healthPoints <= 0 ? 
+        `${enemy.name} has fallen due to the ${weapon}.`: 
+        `${this.name} [${this.healthPoints}] smashes the ground with his ${weapon} for ${damage} and injures ${enemy.name} [${enemy.healthPoints}]`;
     }
 }  
 
-  
-  
-  
-  Hero.prototype.attack = function(enemy, weapon) {
-    //writing if statment a different way
-    let damage = 0;
-    
-    (weapon == "Fist") ? damage = 15 : 
-    (weapon == "Foot") ? damage = 20 :
-    (weapon == "Double Fists") ? damage = 30 : damage = 0;
-    
-    damage *= (this.dimensions.length+this.dimensions.width+this.dimensions.height);
-    enemy.healthPoints -= damage;
-  
-    return enemy.healthPoints <= 0 ? 
-    `${enemy.name} has fallen due to the ${weapon}.`: 
-    `${this.name} [${this.healthPoints}] smashes the ground with his ${weapon} for ${damage} and injures ${enemy.name} [${enemy.healthPoints}]`;
-  }
-  
-  
+   
 const badGuy = new Villian({
     createdAt: new Date(),
     dimensions: {
