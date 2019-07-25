@@ -1,4 +1,9 @@
 // CODE here for your Lambda Classes
+//import { randomItemFromArray } from "./prototype-refactor.js";
+function randomItemFromArray(array){
+    return array[Math.floor(Math.random()*array.length)];
+  } 
+
 
 class Person {
     constructor(attrs) {
@@ -26,6 +31,24 @@ class Instructor extends Person {
 
     grade(student, subject) {
         console.log(`${student.name} receives a perfect score on ${subject}`);
+    }
+
+    changeGrade(student) {
+        //Assume grade can't be negative or above 100 (cause that's just 100)
+        console.log(student.grade);
+        const signValue = randomItemFromArray([1,-1]);
+        const changeAmount = Math.floor(Math.random()*100-1)*signValue;
+        
+        if (student.grade + changeAmount < 0){
+            student.grade = 0;
+    
+        } else if (student.grade + changeAmount > 100) {
+            student.grade = 100;
+        } else {
+            student.grade += changeAmount;   
+        }
+        console.log(student.grade, changeAmount);
+        console.log(student.grade);
     }
 }
 
@@ -98,6 +121,8 @@ fred.debugsCode(dave, "Javascript");
 //Instructor 
 fred.demo("CSS");
 fred.grade(dave, "CSS");
+fred.changeGrade(dave);
+fred.grade(dave, "CSS");
 
 //Student 
 dave.listsSubjects();
@@ -105,7 +130,6 @@ dave.PRAssignment("HTML");
 dave.sprintChallenge("CSS");
 
 console.log(dave.grade);
-
 
 //Person 
 dave.speak();

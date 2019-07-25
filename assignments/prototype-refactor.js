@@ -220,3 +220,5 @@ const goodGuy = new Hero({
   }
   
   battle(goodGuy, badGuy);
+
+//export { randomItemFromArray };
