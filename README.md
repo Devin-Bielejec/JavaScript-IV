@@ -6,12 +6,12 @@ This challenge focuses on classes in JavaScript using the new `class` keyword.
 
 **Follow these steps to set up and work on your project:**
 
-* [ ] Create a forked copy of this project.
-* [ ] Add your project manager as collaborator on Github.
-* [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
-* [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-* [ ] Push commits: git push origin `<firstName-lastName>`.
+* [X] Create a forked copy of this project.
+* [X] Add your project manager as collaborator on Github.
+* [X] Clone your OWN version of the repository (Not Lambda's by mistake!).
+* [X] Create a new branch: git checkout -b `<firstName-lastName>`.
+* [X] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+* [X] Push commits: git push origin `<firstName-lastName>`.
 
 **Follow these steps for completing your project.**
 
@@ -44,8 +44,8 @@ const fred = new Person({
 
 ## `prototype-refactor` - Take existing code and make it modern.
 
-* You're going to work with your prototypes assignment you built out yesterday.
-* `Challenge:` **Convert** all of your constructors into ES6 Classes using the `class` and `extends` keywords. You should be able to run your same logs and they should build out the proper expected behaviors.
+[X] You're going to work with your prototypes assignment you built out yesterday.
+[X] `Challenge:` **Convert** all of your constructors into ES6 Classes using the `class` and `extends` keywords. You should be able to run your same logs and they should build out the proper expected behaviors.
 
 ## `lambda-classes` - We need a roster of Lambda School personnel. Build it!
 
@@ -69,51 +69,51 @@ const fred = new Instructor({
 
 #### Person
 
-* First we need a Person class. This will be our `base-class`
-* Person receives `name` `age` `location` all as props
-* Person receives `speak` as a method.
-* This method logs out a phrase `Hello my name is Fred, I am from Bedrock` where `name` and `location` are the object's own props
+[X] First we need a Person class. This will be our `base-class`
+[X] Person receives `name` `age` `location` all as props
+[X] Person receives `speak` as a method.
+[X] This method logs out a phrase `Hello my name is Fred, I am from Bedrock` where `name` and `location` are the object's own props
 
 #### Instructor
 
-* Now that we have a Person as our base class, we'll build our Instructor class.
-* Instructor uses the same attributes that have been set up by Person
-* Instructor has the following unique props:
-  * `specialty` what the Instructor is good at i.e. 'redux'
-  * `favLanguage` i.e. 'JavaScript, Python, Elm etc.'
-  * `catchPhrase` i.e. `Don't forget the homies`
-* Instructor has the following methods:
-  * `demo` receives a `subject` string as an argument and logs out the phrase 'Today we are learning about {subject}' where subject is the param passed in.
-  * `grade` receives a `student` object and a `subject` string as arguments and logs out '{student.name} receives a perfect score on {subject}'
+[X] Now that we have a Person as our base class, we'll build our Instructor class.
+[X] Instructor uses the same attributes that have been set up by Person
+[X] Instructor has the following unique props:
+  [X] `specialty` what the Instructor is good at i.e. 'redux'
+  [X] `favLanguage` i.e. 'JavaScript, Python, Elm etc.'
+  [X] `catchPhrase` i.e. `Don't forget the homies`
+[X] Instructor has the following methods:
+  [X] `demo` receives a `subject` string as an argument and logs out the phrase 'Today we are learning about {subject}' where subject is the param passed in.
+  [X] `grade` receives a `student` object and a `subject` string as arguments and logs out '{student.name} receives a perfect score on {subject}'
 
 #### Student
 
-* Now we need some students!
-* Student uses the same attributes that have been set up by Person
-* Student has the following unique props:
-  * `previousBackground` i.e. what the Student used to do before Lambda School
-  * `className` i.e. CS132
-  * `favSubjects`. i.e. an array of the student's favorite subjects ['Html', 'CSS', 'JavaScript']
-* Student has the following methods:
-  * `listsSubjects` a method that logs out all of the student's favoriteSubjects one by one.
-  * `PRAssignment` a method that receives a subject as an argument and logs out that the `student.name has submitted a PR for {subject}`
-  * `sprintChallenge` similar to PRAssignment but logs out `student.name has begun sprint challenge on {subject}`
+[X] Now we need some students!
+[X] Student uses the same attributes that have been set up by Person
+[X] Student has the following unique props:
+  [X] `previousBackground` i.e. what the Student used to do before Lambda School
+  [X] `className` i.e. CS132
+  [X] `favSubjects`. i.e. an array of the student's favorite subjects ['Html', 'CSS', 'JavaScript']
+[X] Student has the following methods:
+  [X] `listsSubjects` a method that logs out all of the student's favoriteSubjects one by one.
+  [X] `PRAssignment` a method that receives a subject as an argument and logs out that the `student.name has submitted a PR for {subject}`
+  [X] `sprintChallenge` similar to PRAssignment but logs out `student.name has begun sprint challenge on {subject}`
 
 #### Project Manager
 
-* Now that we have instructors and students, we'd be nowhere without our PM's
-* ProjectManagers are extensions of Instructors
-* ProjectManagers have the following unique props:
-  * `gradClassName`: i.e. CS1
-  * `favInstructor`: i.e. Sean
-* ProjectManagers have the following Methods:
-  * `standUp` a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​
-  * `debugsCode` a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}`
+[X] Now that we have instructors and students, we'd be nowhere without our PM's
+[X] ProjectManagers are extensions of Instructors
+[X] ProjectManagers have the following unique props:
+  [X] `gradClassName`: i.e. CS1
+  [X] `favInstructor`: i.e. Sean
+[X] ProjectManagers have the following Methods:
+  [X] `standUp` a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​
+  [X] `debugsCode` a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}`
 
 #### Stretch Problem
 
-* Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
-* Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
-* Add a graduate method to a student.
-  * This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
-  * If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
+[X] Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
+[X] Now that our students have a grade, build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
+[X] Add a graduate method to a student.
+  [X] This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
+  [X] If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
