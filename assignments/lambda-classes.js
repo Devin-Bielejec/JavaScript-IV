@@ -15,9 +15,9 @@ class Person {
 class Instructor extends Person {
     constructor(attrs) {
         super(attrs),
-        this.specialty = attr.specialty,
-        this.favLanguage = attr.favLanguage,
-        this.catchPhrase = attr.catchPhrase
+        this.specialty = attrs.specialty,
+        this.favLanguage = attrs.favLanguage,
+        this.catchPhrase = attrs.catchPhrase
     }
 
     demo(subject) {
@@ -45,11 +45,11 @@ class Student extends Person {
     }
 
     PRAssignment(subject) {
-        console.log(`${student.name} has submitted a PR for ${subject}`);
+        console.log(`${this.name} has submitted a PR for ${subject}`);
     }
 
     sprintChallenge(subject) {
-        console.log(`${student.name} has begun sprint challenge on ${subject}`);
+        console.log(`${this.name} has begun sprint challenge on ${subject}`);
     }
 }
 
@@ -65,15 +65,43 @@ class ProjectManager extends Instructor {
     }
 
     debugsCode(student, subject) {
-        console.log(`${this.name} debugs ${student.name}'s code on {subject}`);
+        console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
     }
 }
 
-const fred = new Instructor({
+const dave = new Student({ //second highest parent
+    name: 'Dave',
+    location: 'Bedrock',
+    age: 37,
+    previousBackground: 'Teacher',
+    className: 'WEB22',
+    favSubjects: ["Cooking", "Math", "English"]
+});
+
+const fred = new ProjectManager({ //highest parent
     name: 'Fred',
     location: 'Bedrock',
     age: 37,
     favLanguage: 'JavaScript',
     specialty: 'Front-end',
-    catchPhrase: `Don't forget the homies`
+    catchPhrase: `Don't forget the homies`,
+    gradClassName: 'GradClass#1',
+    favInstrucor: 'Britt'
 });
+
+//PM methods
+fred.standUp("Cool Channel");
+fred.debugsCode(dave, "Javascript");
+
+//Instructor methods
+fred.demo("CSS");
+fred.grade(dave, "CSS");
+
+//Student methods
+dave.listsSubjects();
+dave.PRAssignment("HTML");
+dave.sprintChallenge("CSS");
+
+//Person Methods
+dave.speak();
+fred.speak();
