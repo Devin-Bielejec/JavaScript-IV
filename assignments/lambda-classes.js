@@ -35,7 +35,8 @@ class Student extends Person {
         super(attrs),
         this.previousBackground = attrs.previousBackground,
         this.className = attrs.className,
-        this.favSubjects = attrs.favSubjects
+        this.favSubjects = attrs.favSubjects,
+        this.grade = attrs.grade
     }
 
     listsSubjects() {
@@ -75,7 +76,8 @@ const dave = new Student({ //second highest parent
     age: 37,
     previousBackground: 'Teacher',
     className: 'WEB22',
-    favSubjects: ["Cooking", "Math", "English"]
+    favSubjects: ["Cooking", "Math", "English"],
+    grade: (Math.floor(Math.random()*100))
 });
 
 const fred = new ProjectManager({ //highest parent
@@ -89,19 +91,22 @@ const fred = new ProjectManager({ //highest parent
     favInstrucor: 'Britt'
 });
 
-//PM methods
+//PM 
 fred.standUp("Cool Channel");
 fred.debugsCode(dave, "Javascript");
 
-//Instructor methods
+//Instructor 
 fred.demo("CSS");
 fred.grade(dave, "CSS");
 
-//Student methods
+//Student 
 dave.listsSubjects();
 dave.PRAssignment("HTML");
 dave.sprintChallenge("CSS");
 
-//Person Methods
+console.log(dave.grade);
+
+
+//Person 
 dave.speak();
 fred.speak();
